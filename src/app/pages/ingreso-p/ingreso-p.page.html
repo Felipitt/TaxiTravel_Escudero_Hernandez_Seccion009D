@@ -1,0 +1,148 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()" color="dark">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+    
+    <ion-buttons slot="end" routerLink="/inicio2">
+      <ion-button color="dark">
+        <ion-icon slot="start" name="person-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+
+    <ion-buttons slot="end">
+      <ion-button (click)="Despedida()" color="dark">
+        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title color="dark">Pasajero</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <img src="assets/logoduoc.png" class="ion-padding">
+
+  <ion-avatar class="avatar">
+    <img src="assets/logo.jpeg">
+  </ion-avatar>
+
+  <form #formulario="ngForm" (ngSubmit) ="onSubmit()">
+    <ion-list-header>
+      <ion-label>Pasajero: {{formulario.valid}} </ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Nombre: </ion-label>
+      <ion-input type="text" placeholder="Nombre"
+                 name="nombre" [(ngModel)]= "usuario.nombre" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Número telefónico: </ion-label>
+      <ion-input type="tel" placeholder="Número telefónico"
+                 name="numero" maxlenght="10" [(ngModel)]= "usuario.numero" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Punto de Inicio</ion-label>
+      <ion-input>
+      <ion-select name="inicio"[(ngModel)]= "usuario.inicio" required>
+        <ion-select-option >Sede Alameda</ion-select-option>
+        <ion-select-option >Sede Antonio Varas</ion-select-option>
+        <ion-select-option >Sede Educación Continua</ion-select-option>
+        <ion-select-option >Sede Maipú</ion-select-option>
+        <ion-select-option >Sede Melipilla</ion-select-option>
+        <ion-select-option >Sede Padre Alonso de Ovalle</ion-select-option>
+        <ion-select-option >Sede Plaza Oeste</ion-select-option>
+        <ion-select-option >Sede Plaza Norte</ion-select-option>
+        <ion-select-option >Sede Plaza Vespucio</ion-select-option>
+        <ion-select-option >Sede Puente Alto</ion-select-option>
+        <ion-select-option >Sede San Bernardo</ion-select-option>
+        <ion-select-option >Sede San Carlos de Apoquindo</ion-select-option>
+        <ion-select-option >Sede San Joaquín</ion-select-option>
+      </ion-select>
+     </ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Destino</ion-label>
+      <ion-input>
+      <ion-select name="destino"[(ngModel)]= "usuario.destino" required>
+        <ion-select-option >Providencia: $5000 </ion-select-option>
+        <ion-select-option >Las condes: $6000</ion-select-option>
+        <ion-select-option >Maipu: $2000</ion-select-option>
+        <ion-select-option >Lo Barnechea </ion-select-option>
+        <ion-select-option value="Padre Hurtado">Padre Hurtado</ion-select-option>
+        <ion-select-option value="Cerrillos">Cerrillos</ion-select-option>
+        <ion-select-option value="Pudahuel">Pudahuel </ion-select-option>
+        <ion-select-option value="Quinta Normal">Quinta Normal</ion-select-option>
+        <ion-select-option value="Estacion Central">Estacion Central</ion-select-option>
+        <ion-select-option value="San bernardo">San bernardo </ion-select-option>
+        <ion-select-option value="La pintana">La pintana</ion-select-option>
+        <ion-select-option value="Pedro aguirre cerda">Pedro aguirre cerda</ion-select-option>
+        <ion-select-option value="Macul">Macul</ion-select-option>
+        <ion-select-option value="La florida">La florida</ion-select-option>
+        <ion-select-option value="La reina">La reina</ion-select-option>
+        <ion-select-option value="Puente alto">Puente alto</ion-select-option>
+        <ion-select-option value="Independecia">Independecia</ion-select-option>
+        <ion-select-option value="Ñuñoa">Ñuñoa</ion-select-option>
+        <ion-select-option value="Vitacura">Vitacura</ion-select-option>
+        <ion-select-option value="Huechuraba">Huechuraba</ion-select-option>
+        <ion-select-option value="Conchali">Conchali</ion-select-option>
+        <ion-select-option value="Lo espejo">Lo espejo</ion-select-option>
+        <ion-select-option value="La cisterna">La cisterna</ion-select-option>
+        <ion-select-option value="San ramon">San ramon</ion-select-option>
+        <ion-select-option value="La granja">La granja</ion-select-option>
+        <ion-select-option value="San miguel">San miguel</ion-select-option>
+        <ion-select-option value="San joaquin">San joaquin</ion-select-option>
+        <ion-select-option value="El bosque">El bosque</ion-select-option>
+        <ion-select-option value="Lo prado">Lo prado</ion-select-option>
+        <ion-select-option value="Cerro navia">Cerro navia</ion-select-option>
+        <ion-select-option value="Quilicura">Quilicura</ion-select-option>
+        <ion-select-option value="Renca">Renca</ion-select-option>
+        <ion-select-option value="Recoleta">Recoleta</ion-select-option>
+        <ion-select-option value="Santiago">Santiago</ion-select-option>
+        <ion-select-option value="Peñalolen">Peñalolen</ion-select-option>
+      </ion-select>
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Método de Pago: </ion-label>
+    <ion-input>
+      <ion-select name="pago"[(ngModel)]= "usuario.pago" required>
+        <ion-select-option>Efectivo</ion-select-option>
+        <ion-select-option>T.Débito</ion-select-option>
+        <ion-select-option>T.Crédito</ion-select-option>
+      </ion-select>
+    </ion-input>
+  </ion-item>
+
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Información del viaje</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Nombre: {{ usuario.nombre }}</p>
+      <p>Numero telefonico: {{ usuario.numero }}</p>
+      <p>Partida: {{ usuario.inicio }}</p>
+      <p>Destino: {{ usuario.destino }}</p>
+      <p>Método de Pago: {{ usuario.pago }}</p>
+      
+    </ion-card-content>
+  </ion-card>
+
+    <ion-button expand="block" routerLink="/ingreso-p" (click)="showLoading()" (click)="auto()" color="dark">Confirmar</ion-button>
+
+    <ion-button expand="block" routerLink="/viajes" (click)="showLoading()" color="danger">Inténtelo nuevamente</ion-button>
+
+  </form>
+</ion-content>

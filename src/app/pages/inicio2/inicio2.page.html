@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()" color="dark">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+    
+    <ion-buttons slot="end" routerLink="/inicio2">
+      <ion-button color="dark">
+        <ion-icon slot="start" name="person-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+
+    <ion-buttons slot="end">
+      <ion-button (click)="Despedida()" color="dark">
+        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title color="dark">Inicio Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img src="assets/logoduoc.png" class="ion-padding">
+  
+  <ion-avatar class="avatar">
+    <img src="assets/logo.jpeg">
+  </ion-avatar> 
+
+  <form #formulario="ngForm" (ngSubmit) ="onSubmit()">
+    <ion-list-header>
+      <ion-label>Inicio Sesión: {{formulario.valid}} </ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Nombre: </ion-label>
+      <ion-input type="text" placeholder="Nombre"
+                 name="nombre" [(ngModel)]= "usuario.nombre" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Password: </ion-label>
+      <ion-input type="password" placeholder="Contraseña"
+                 name="password"  [(ngModel)]= "usuario.password"
+                 required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Tipo de Cuenta:</ion-label>
+      <ion-select>
+        <ion-select-option value="conductor">Conductor</ion-select-option>
+        <ion-select-option value="pasajero">Pasajero</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </form>
+
+    <ion-router-link color="danger" routerLink="/mail">Recuperar contraseña</ion-router-link>
+    
+
+
+    <ion-button color="success"
+            type="submit" expand="block" routerLink="/inicio1">
+      Ingresar
+    </ion-button>
+
+    <ion-button color="secondary"
+            type="submit" expand="block" routerLink="/registro2">
+      Registro Pasajero
+    </ion-button>
+
+    <ion-button color="dark"
+            type="submit" expand="block" routerLink="/registro">
+      Registro Conductor
+    </ion-button>
+</ion-content>
+
+
+
+

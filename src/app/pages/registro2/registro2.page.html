@@ -1,0 +1,101 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()" color="dark">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+    
+    <ion-buttons slot="end" routerLink="/inicio2">
+      <ion-button color="dark">
+        <ion-icon slot="start" name="person-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+
+    <ion-buttons slot="end">
+      <ion-button (click)="Despedida()" color="dark">
+        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title color="dark">Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+
+    <img src="assets/logoduoc.png" class="ion-padding">
+
+
+  <ion-avatar class="avatar">
+    <img src="assets/logo.jpeg">
+  </ion-avatar>
+
+  <form #formulario="ngForm" (ngSubmit) ="onSubmit()">
+    <ion-list-header>
+      <ion-label>Pasajero: {{formulario.valid}} </ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Nombre: </ion-label>
+      <ion-input type="text" placeholder="Nombre"
+                 name="nombre" [(ngModel)]= "usuario.nombre" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Email: </ion-label>
+      <ion-input type="email" placeholder="Email"
+                 name="email" value="" [(ngModel)]= "usuario.email"
+                 pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                 required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Password: </ion-label>
+      <ion-input type="password" placeholder="Contraseña"
+                 name="password" value="" [(ngModel)]= "usuario.password"
+                 required>
+      </ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Género</ion-label>
+      <ion-select>
+        <ion-select-option value="femenino">Femenino</ion-select-option>
+        <ion-select-option value="masculino">Masculino</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Selecciona tu Sede </ion-label>
+      <ion-select>
+        <ion-select-option value="sede1">Sede Alameda</ion-select-option>
+        <ion-select-option value="sede2">Sede Antonio Varas</ion-select-option>
+        <ion-select-option value="sede3">Sede Educación Continua</ion-select-option>
+        <ion-select-option value="sede4">Sede Maipú</ion-select-option>
+        <ion-select-option value="sede5">Sede Melipilla</ion-select-option>
+        <ion-select-option value="sede6">Sede Padre Alonso de Ovalle</ion-select-option>
+        <ion-select-option value="sede7">Sede Plaza Oeste</ion-select-option>
+        <ion-select-option value="sede8">Sede Plaza Norte</ion-select-option>
+        <ion-select-option value="sede9">Sede Plaza Vespucio</ion-select-option>
+        <ion-select-option value="sede10">Sede Puente Alto</ion-select-option>
+        <ion-select-option value="sede11">Sede San Bernardo</ion-select-option>
+        <ion-select-option value="sede12">Sede San Carlos de Apoquindo</ion-select-option>
+        <ion-select-option value="sede13">Sede San Joaquín</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    
+
+    <ion-button color="secondary"
+            type="submit" expand="block" routerLink="/ingreso-p">
+      Ingresar
+    </ion-button>
+
+  </form>
+</ion-content>

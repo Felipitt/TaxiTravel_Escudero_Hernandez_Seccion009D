@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()" color="dark">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+    
+    <ion-buttons slot="end" routerLink="/inicio2">
+      <ion-button color="dark">
+        <ion-icon slot="start" name="person-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+
+    <ion-buttons slot="end">
+      <ion-button (click)="Despedida()" color="dark">
+        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <br>
+  <ion-card>
+    
+      <ion-item>
+      <ion-label color="dark">Correo: </ion-label>
+      <ion-input type="email" placeholder="Ingrese Correo"
+                 name="email" [(ngModel)]= "usuario.email"
+                 required>
+      </ion-input>
+      </ion-item>
+
+      <ion-button (click)="recuperar()" color="dark"
+            type="submit" expand="block">
+      Enviar
+    </ion-button>
+
+  </ion-card>
+
+</ion-content>
